@@ -1,0 +1,29 @@
+- id: ruff
+  name: ruff
+  language: system
+  entry: ruff check --force-exclude
+  types_or: [python, pyi]
+  require_serial: true
+
+- id: black
+  name: black
+  language: system
+  entry: black --check --quiet
+  types_or: [python, pyi]
+  require_serial: true
+
+- id: eslint
+  name: eslint
+  language: system
+  entry: npx eslint --max-warnings 1
+  types: [file]
+  files: \.[jt]sx?$
+  require_serial: true
+
+- id: prettier
+  name: prettier
+  language: system
+  entry: npx prettier --check
+  types: [file]
+  files: \.(css|less|md)$
+  require_serial: true
