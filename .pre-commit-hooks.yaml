@@ -1,14 +1,14 @@
-- id: ruff
-  name: ruff
+- id: ruff-check
+  name: ruff-check
   language: system
   entry: ruff check --force-exclude
   types_or: [python, pyi]
   require_serial: true
 
-- id: black
-  name: black
+- id: ruff-format
+  name: ruff-format
   language: system
-  entry: black --check --quiet
+  entry: ruff format --force-exclude
   types_or: [python, pyi]
   require_serial: true
 
